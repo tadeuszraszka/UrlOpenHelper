@@ -1,3 +1,3 @@
 # UrlOpenHelper
 
-A description of this package.
+Helper for url, for open url or create

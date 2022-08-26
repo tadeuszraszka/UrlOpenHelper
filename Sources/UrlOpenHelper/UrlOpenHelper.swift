@@ -19,11 +19,16 @@ final private class UrlOpenHelperImpl {
 }
 
 extension UrlOpenHelperImpl: UrlOpenHelper {
-
+    
+    /// Check if url can be opened
+    /// - Parameter url: Foundation URL
+    /// - Returns: If URL is openable
     func canOpenUrl(_ url: URL) -> Bool {
         UIApplication.shared.canOpenURL(url)
     }
-
+    
+    /// Open URL
+    /// - Parameter url: Foundation URL
     func openUrl(_ url: URL) {
         UIApplication.shared.open(
             url,
@@ -31,7 +36,9 @@ extension UrlOpenHelperImpl: UrlOpenHelper {
             completionHandler: nil
         )
     }
-
+    
+    /// Create URL from RAW string if possible & can be opened
+    /// - Parameter rawUrlValue: Raw string for create URL
     func openUrlIfPossible(_ rawUrlValue: String) {
         guard
             let url = URL(string: rawUrlValue),
